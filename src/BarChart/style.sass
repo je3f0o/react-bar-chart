@@ -1,0 +1,25 @@
+
+.bar-chart
+  --border-color: #E3E8EE
+
+  gap            : 16px
+  display        : flex
+  flex-direction : column
+
+  canvas
+    display: block
+
+  &__main
+    height: 300px
+    //outline: 1px solid gray
+
+  &__overview
+    height        : 40px
+    border        : 1px solid var(--border-color)
+    box-sizing    : border-box
+    border-radius : 4px 4px 0 0
+
+  &__measurement
+    top      : -9999px
+    left     : -9999px
+    position : fixed
