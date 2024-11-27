@@ -161,7 +161,7 @@ export default ({
 
     const rect   = state.overviewCanvas.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
-    if (state.selectionStart === mouseX) {
+    if (state.mouseDownX === mouseX) {
       state.endIndex       = null;
       state.startIndex     = null;
       state.selectedData   = null;
@@ -175,7 +175,6 @@ export default ({
     state.isMouseDown = false;
     drawChart();
     cleanup();
-    console.log(state);
   };
 
   const onMouseMove = (e: MouseEvent) => {
