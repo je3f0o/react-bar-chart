@@ -531,7 +531,8 @@ export default ({
         selectionStart : state.selectionStart,
         selectionWidth : Math.abs(state.selectionEnd - state.selectionStart),
       };
-      document.body.style.cursor = "grabbing";
+      e.currentTarget.style.cursor = null;
+      document.body.style.cursor   = "grabbing";
     } else {
       state.drag           = null;
       state.selectionEnd   = null;
@@ -588,9 +589,9 @@ export default ({
   const onMouseMoveOverview = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const state                    = stateRef.current;
     const {overviewCanvas: canvas} = state;
+    if (state.isMouseDown) return;
 
     const mouseX = getMousePosition(e);
-
     if (!state.drag && hasSelection() && isInSelectionRange(mouseX)) {
       canvas.style.cursor = "move";
     } else {
