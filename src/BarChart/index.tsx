@@ -330,8 +330,8 @@ export default ({
     const caretHalfWidth = caretWidth * 0.5;
 
     ctx.save();
-    ctx.translate(caretX, y + 5);
-    ctx.rotate(Math.PI * -0.75);
+    ctx.translate(caretX, y - 5);
+    ctx.rotate(Math.PI * 0.25);
     ctx.fillRect(0, 0, caretWidth, caretWidth);
     ctx.restore();
 
